@@ -1,0 +1,10 @@
+Key Points to Remember:
+Iterable Interface: Provides the iterator() method to get an Iterator.
+
+Iterator Interface: Provides methods like hasNext(), next(), and remove() for traversal.
+
+Enhanced For-Loop: Works with any class that implements Iterable.
+
+Custom Iterables: You can create your own iterable classes by implementing Iterable and Iterator.
+
+forEach Method: A concise way to iterate using lambda expressions or method references.

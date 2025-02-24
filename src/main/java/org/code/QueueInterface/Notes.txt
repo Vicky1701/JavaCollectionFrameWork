@@ -1,0 +1,119 @@
+Queue Interface in Java
+The Queue interface in Java is part of the java.util package and represents a collection designed for holding elements prior to processing. It follows the FIFO (First-In-First-Out) principle, but some implementations (like PriorityQueue) can override this behavior.
+
+Key Methods in Queue
+add(E e): Adds an element to the queue. Throws an exception if the queue is full.
+
+offer(E e): Adds an element to the queue. Returns false if the queue is full.
+
+remove(): Removes and returns the head of the queue. Throws an exception if the queue is empty.
+
+poll(): Removes and returns the head of the queue. Returns null if the queue is empty.
+
+element(): Returns the head of the queue without removing it. Throws an exception if the queue is empty.
+
+peek(): Returns the head of the queue without removing it. Returns null if the queue is empty.
+
+
+
+Queue Implementations
+1. PriorityQueue
+A priority-based queue where elements are ordered based on their natural ordering or a custom Comparator.
+
+Does not follow FIFO strictly; the element with the highest priority is always at the head.
+
+Underlying Data Structure: Min-heap or Max-heap (depending on the comparator).
+
+Key Features
+Elements are ordered by priority.
+
+Null elements are not allowed.
+
+Not thread-safe.
+
+
+2. Deque Interface
+Double-Ended Queue: Allows insertion and removal of elements from both ends (front and rear).
+
+Extends the Queue interface.
+
+Implementations: ArrayDeque and LinkedList.
+
+Key Methods in Deque
+addFirst(E e): Adds an element to the front.
+
+addLast(E e): Adds an element to the rear.
+
+removeFirst(): Removes and returns the first element.
+
+removeLast(): Removes and returns the last element.
+
+getFirst(): Returns the first element without removing it.
+
+getLast(): Returns the last element without removing it.
+
+3. ArrayDeque
+A resizable-array implementation of the Deque interface.
+
+Faster than LinkedList for most operations.
+
+Underlying Data Structure: Resizable array.
+
+Key Features
+No capacity restrictions (grows as needed).
+
+Not thread-safe.
+
+More efficient than LinkedList for queue and stack operations.
+
+
+4. LinkedList
+Implements both Queue and Deque interfaces.
+
+Underlying Data Structure: Doubly-linked list.
+
+Key Features
+Allows null elements.
+
+Slower than ArrayDeque for queue operations but provides more functionality (e.g., indexed access).
+
+Can be used as a list, queue, or deque.
+
+
+Comparison of Queue Implementations
+Feature	PriorityQueue	ArrayDeque	LinkedList
+Ordering	Priority-based	FIFO or LIFO	FIFO or LIFO
+Underlying DS	Min-heap/Max-heap	Resizable array	Doubly-linked list
+Null Elements	Not allowed	Allowed	Allowed
+Thread Safety	Not thread-safe	Not thread-safe	Not thread-safe
+Performance	O(log n) for insert/remove	O(1) for most ops	O(1) for most ops
+Use Case	Priority-based tasks	Queue/Stack ops	General-purpose
+When to Use Which?
+PriorityQueue:
+
+Use when elements need to be processed based on priority.
+
+Example: Task scheduling, Dijkstra's algorithm.
+
+ArrayDeque:
+
+Use for stack or queue operations where performance is critical.
+
+Example: Implementing a stack, sliding window problems.
+
+LinkedList:
+
+Use when you need a general-purpose list or deque with additional functionality (e.g., indexed access).
+
+Example: Implementing a queue or deque with frequent modifications.
+
+Summary
+Queue: FIFO data structure with implementations like PriorityQueue, ArrayDeque, and LinkedList.
+
+PriorityQueue: Priority-based ordering.
+
+Deque: Double-ended queue with implementations like ArrayDeque and LinkedList.
+
+ArrayDeque: Efficient for stack/queue operations.
+
+LinkedList: Flexible but slower for queue operations.
